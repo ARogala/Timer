@@ -1,0 +1,50 @@
+<!-- Andrew Rogala 4/10/18 -->
+<!-- Timer -->
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Timer</title>
+		<link rel="icon" href="alarm_clock.ico">
+		<link href="timer.css" rel="stylesheet">
+		<script src="timerModule.js" defer></script>
+	</head>
+	<body>
+		<div class="inputForm">
+			<form id="getTime">
+
+				<div class="label"><label for="inputHours">Hours:</label></div>
+				<input type="number" id="inputHours" class="input" name="hours" min="0" value="0" required="true">
+
+
+
+				<div class="label"><label for="inputMinutes">Minutes:</label></div>
+				<input type="number" id="inputMinutes" class="input" name="minutes" min="0" value="0" required="true">
+
+
+				<div class="label"><label for="inputSeconds">Seconds:</label></div>
+				<input type="number" id="inputSeconds" class="input" name="seconds" min="0" value="0" required="true">
+
+
+				<div class="btnContainer">
+					<button type="submit" value="Submit" class="btn">Start Timer</button>
+					<button type="reset" value="Reset" class="btn">Reset</button>
+				</div>
+			</form>
+
+
+			<div id="display">
+				<div id="hoursRemaining" class="output">
+					00:
+				</div>
+				<div id="minutesRemaining" class="output">
+					00:
+				</div>
+				<div id="secondsRemaining" class="output">
+					00
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

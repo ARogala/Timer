@@ -5,6 +5,8 @@ sufficiently.
 
 To run: download or clone and open index.html in your browser
 
+see live demo: https://arogalatimer.surge.sh
+
 Feel free to use and modify
 
 future plans:

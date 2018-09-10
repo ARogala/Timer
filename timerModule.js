@@ -89,7 +89,7 @@ var TimerCalc = (function(UICtrl) {
 			return (minutes*60)+(hours*60*60)+(seconds);
 		},
 
-		timer: function(totalSeconds) {
+		timer: function(totalSeconds, audio1, audio2) {
 			//only call if totalSeconds not 0
 			if(totalSeconds != 0) {
 				var intervalID = setInterval(function(){
@@ -98,12 +98,10 @@ var TimerCalc = (function(UICtrl) {
 					UICtrl.upDateUI(totalSeconds);
 					if(totalSeconds === 0){
 						clearInterval(intervalID);
-						var audio = new Audio('alarmSound.mp3');
-						audio.play();
+						audio1.play();
 						//sound alarm until user presses reset 2 sec delay between audio
 						var soundIntervalID = setInterval(function(){
-							var audio = new Audio('alarmSound.mp3');
-							audio.play();
+							audio2.play();
 						},15000);
 					}
 				},1000);
@@ -126,7 +124,18 @@ var Controller =(function(UICtrl, TimerCtrl) {
 	var setupEventListeners = function() {
 		document.getElementById(DOM.formInput).addEventListener('submit', function(e){
 			e.preventDefault();
-			ctrlTimerAndUI();
+			/*
+			 set up audio here bc/ chrome on android only plays sounds
+			 if the user interacts with the DOM first. play then pause was the only
+			 way i could think to trick this.
+			*/
+			let audio1 = new Audio('alarmSound.ogg');
+			let audio2 = new Audio('alarmSound.ogg');
+			audio1.play();
+			audio1.pause();
+			audio2.play();
+			audio2.pause();
+			ctrlTimerAndUI(audio1, audio2);
 			input.setAttribute('style', 'display: none;');
 			output.setAttribute('style', 'display: block;');
 			resetBtn.setAttribute('style', 'display: inline-block;');
@@ -142,7 +151,7 @@ var Controller =(function(UICtrl, TimerCtrl) {
 
 
 	//control the brain and UI here
-	var ctrlTimerAndUI = function() {
+	var ctrlTimerAndUI = function(audio1, audio2) {
 		//get the user input data
 		var input = UICtrl.getInput();
 		//parse to integers
@@ -154,7 +163,7 @@ var Controller =(function(UICtrl, TimerCtrl) {
 		//display the initial start time
 		UICtrl.upDateUI(totalSeconds);
 		//start the timer
-		TimerCtrl.timer(totalSeconds);
+		TimerCtrl.timer(totalSeconds, audio1, audio2);
 
 	};
 

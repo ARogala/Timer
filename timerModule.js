@@ -14,7 +14,11 @@ var UIController = (function() {
 		formInput:        'getTime',
 		hoursRemaining:   'hoursRemaining',
 		minutesRemaining: 'minutesRemaining',
-		secondsRemaining: 'secondsRemaining'
+		secondsRemaining: 'secondsRemaining',
+		output: 		  'display',
+		input:            'inputContainer',
+		resetBtn:         'reset',
+		startBtn:         'submit'
 	};
 
 	//return public methods to get user input, DOMstrings, and updateUI
@@ -111,12 +115,20 @@ var TimerCalc = (function(UICtrl) {
 
 //the interface that controls brain and UI
 var Controller =(function(UICtrl, TimerCtrl) {
+	var DOM = UICtrl.getDOMstrings();
+	const output = document.getElementById(DOM.output);
+	const input = document.getElementById(DOM.input);
+	const resetBtn = document.getElementById(DOM.resetBtn);
+	const startBtn = document.getElementById(DOM.startBtn);
 
 	var setupEventListeners = function() {
-		var DOM = UICtrl.getDOMstrings();
 		document.getElementById(DOM.formInput).addEventListener('submit', function(e){
 			e.preventDefault();
 			ctrlTimerAndUI();
+			input.setAttribute('style', 'display: none;');
+			output.setAttribute('style', 'display: block;');
+			resetBtn.setAttribute('style', 'display: inline-block;');
+			startBtn.setAttribute('style', 'display: none;');
 		});
 		//reset the timer when reset button pressed
 		document.getElementById(DOM.formInput).addEventListener('reset', function(){
@@ -146,6 +158,8 @@ var Controller =(function(UICtrl, TimerCtrl) {
 	//return an initialization object
 	return {
 		init: function() {
+			output.setAttribute('style', 'display: none;');
+			resetBtn.setAttribute('style', 'display: none;');
 			setupEventListeners();
 		}
 	};

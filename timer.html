@@ -26,17 +26,19 @@
 			</div>
 			<form id="getTime">
 
-				<input type="number" id="inputHours"   class="input" name="hours"   min="0" value="0" required="true">
-				<input type="number" id="inputMinutes" class="input" name="minutes" min="0" value="0" required="true">
-				<input type="number" id="inputSeconds" class="input" name="seconds" min="0" value="0" required="true">
+				<div id="inputContainer">
+					<input type="number" id="inputHours"   class="input" name="hours"   min="0" value="0" required="true">
+					<input type="number" id="inputMinutes" class="input" name="minutes" min="0" value="0" required="true">
+					<input type="number" id="inputSeconds" class="input" name="seconds" min="0" value="0" required="true">
+				</div>
 
 				<label for="inputHours"   class="label">H</label>
 				<label for="inputMinutes" class="label">M</label>
 				<label for="inputSeconds" class="label">S</label>
 
 				<div class="btnContainer">
-					<button type="submit" value="Submit" class="btn">Start</button>
-					<button type="reset"  value="Reset"  class="btn">Reset</button>
+					<button type="submit" value="Submit" id="submit" class="btn">Start</button>
+					<button type="reset"  value="Reset"  id="reset"  class="btn">Reset</button>
 				</div>
 			</form>
 		</div>

@@ -1,0 +1,42 @@
+@charset "UTF-8";
+/**
+ * JavaScript Timer
+ * @authors Andrew Rogala
+ * @date    9/09/2018
+ * @version 1.0
+ */
+
+ @media screen and (max-width: 600px) {
+ 	html {
+ 		background: url('milky-way_640.jpg');
+		background-position: center;
+		background-attachment: fixed;
+ 	}
+
+	.input {
+		padding: 0;
+	}
+
+	.btn {
+		width: 40%;
+	}
+ }
+
+
+ @media screen and (max-width: 375px) {
+ 	.inputForm {
+ 		height: 150px;
+ 	}
+
+ 	.output {
+ 		font-size: 6rem;
+ 	}
+
+ 	.label {
+ 		font-size: 2rem;
+ 	}
+
+ 	.btn {
+ 		font-size: 2rem;
+ 	}
+ }

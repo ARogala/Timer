@@ -1,0 +1,124 @@
+@charset "UTF-8";
+/**
+ * JavaScript Timer
+ * @authors Andrew Rogala
+ * @date    9/09/2018
+ * @version 1.0
+ */
+
+@font-face {
+    font-family: 'alarm_clockregular';
+    src: url('alarm_clock-webfont.woff2') format('woff2'),
+         url('alarm_clock-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/*apply a browser reset * only selects element so must select psudo elemts as well
+apply border-box to make all elements account for any border and padding in the values
+you specify for an element's width and height. If you set an element's width to 100 pixels,
+that 100 pixels will include any border or padding you added, and the content box will shrink
+to absorb that extra width. This typically makes it much easier to size elements.*/
+*,
+*::after,
+*::before {
+	margin: 0px;
+	padding: 0px;
+	box-sizing: inherit;
+}
+/*set the root fontsize to 10px which is 62.5% of the default browser 16px
+defines what 1rem is*/
+html {
+	font-size: 62.5%;
+
+	background: url("milky-way_1920.jpg");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-attachment: fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+body {
+	box-sizing: border-box;
+}
+
+.inputForm {
+	background-color: rgba(0,0,0,.8);
+	max-width: 800px;
+	width: 100%;
+	height: 250px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	border-radius: 20px;
+}
+
+#display {
+	text-align: center;
+	margin: 10px;
+}
+
+.output {
+	display: inline-block;
+	font-size: 6rem;
+	font-family: 'alarm_clockregular';
+	color: #43F300;
+}
+
+#getTime {
+	text-align: center;
+}
+
+.input {
+	border: 2px solid #43F300;
+	width: 25%;
+	border-radius: 20px;
+	text-align: center;
+	font-size: 4rem;
+	font-family: 'alarm_clockregular';
+	color: #43F300;
+	background-color: rgba(0,0,0,.8);
+	margin: 10px;
+	/*offset for input val up down arrows*/
+	padding-left: 20px;
+}
+
+.input:hover {
+	cursor: pointer;
+	transform: scaleX(1.2) scaleY(1.2);
+}
+
+.input:focus {
+	outline: 2px solid #43F300;
+}
+
+.label {
+	display: inline-block;
+	width: 25%;
+	font-size: 3rem;
+	color: #43F300;
+	margin: 0 10px 0 10px;
+}
+
+.btn {
+	width: 20%;
+	font-size: 3rem;
+	border-radius: 20px;
+	border: none;
+	background-color: #C4C6C6;
+	margin: 10px;
+}
+
+.btn:hover{
+	cursor: pointer;
+	background-color: #00B6EE;
+	transform: translateY(3px);
+}
+
+.btn:focus {
+	outline: 2px solid #00B6EE;
+}

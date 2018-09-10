@@ -5,35 +5,14 @@
 <html>
 	<head>
 		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>Timer</title>
 		<link rel="icon" href="alarm_clock.ico">
-		<link href="timer.css" rel="stylesheet">
+		<link href="styles.css" rel="stylesheet">
 		<script src="timerModule.js" defer></script>
 	</head>
 	<body>
 		<div class="inputForm">
-			<form id="getTime">
-
-				<div class="label"><label for="inputHours">Hours:</label></div>
-				<input type="number" id="inputHours" class="input" name="hours" min="0" value="0" required="true">
-
-
-
-				<div class="label"><label for="inputMinutes">Minutes:</label></div>
-				<input type="number" id="inputMinutes" class="input" name="minutes" min="0" value="0" required="true">
-
-
-				<div class="label"><label for="inputSeconds">Seconds:</label></div>
-				<input type="number" id="inputSeconds" class="input" name="seconds" min="0" value="0" required="true">
-
-
-				<div class="btnContainer">
-					<button type="submit" value="Submit" class="btn">Start Timer</button>
-					<button type="reset" value="Reset" class="btn">Reset</button>
-				</div>
-			</form>
-
-
 			<div id="display">
 				<div id="hoursRemaining" class="output">
 					00:
@@ -45,6 +24,21 @@
 					00
 				</div>
 			</div>
+			<form id="getTime">
+
+				<input type="number" id="inputHours"   class="input" name="hours"   min="0" value="0" required="true">
+				<input type="number" id="inputMinutes" class="input" name="minutes" min="0" value="0" required="true">
+				<input type="number" id="inputSeconds" class="input" name="seconds" min="0" value="0" required="true">
+
+				<label for="inputHours"   class="label">H</label>
+				<label for="inputMinutes" class="label">M</label>
+				<label for="inputSeconds" class="label">S</label>
+
+				<div class="btnContainer">
+					<button type="submit" value="Submit" class="btn">Start</button>
+					<button type="reset"  value="Reset"  class="btn">Reset</button>
+				</div>
+			</form>
 		</div>
 	</body>
 </html>

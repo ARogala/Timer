@@ -18,7 +18,8 @@ var UIController = (function() {
 		output: 		  'display',
 		input:            'inputContainer',
 		resetBtn:         'reset',
-		startBtn:         'submit'
+		startBtn:         'submit',
+		labels: 	      'labelContainer'
 	};
 
 	//return public methods to get user input, DOMstrings, and updateUI
@@ -120,6 +121,7 @@ var Controller =(function(UICtrl, TimerCtrl) {
 	const input = document.getElementById(DOM.input);
 	const resetBtn = document.getElementById(DOM.resetBtn);
 	const startBtn = document.getElementById(DOM.startBtn);
+	const labels = document.getElementById(DOM.labels);
 
 	var setupEventListeners = function() {
 		document.getElementById(DOM.formInput).addEventListener('submit', function(e){
@@ -129,6 +131,7 @@ var Controller =(function(UICtrl, TimerCtrl) {
 			output.setAttribute('style', 'display: block;');
 			resetBtn.setAttribute('style', 'display: inline-block;');
 			startBtn.setAttribute('style', 'display: none;');
+			labels.setAttribute('style', 'display: none;');
 		});
 		//reset the timer when reset button pressed
 		document.getElementById(DOM.formInput).addEventListener('reset', function(){

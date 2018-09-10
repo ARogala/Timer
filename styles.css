@@ -49,7 +49,7 @@ body {
 	background-color: rgba(0,0,0,.8);
 	max-width: 800px;
 	width: 100%;
-	height: 250px;
+	height: 170px;
 	position: absolute;
 	top: 50%;
 	left: 50%;
@@ -82,7 +82,7 @@ body {
 	font-family: 'alarm_clockregular';
 	color: #43F300;
 	background-color: rgba(0,0,0,.8);
-	margin: 10px;
+	margin: 20px 10px 10px 10px;
 	/*offset for input val up down arrows*/
 	padding-left: 20px;
 }
